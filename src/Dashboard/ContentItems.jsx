@@ -18,7 +18,7 @@ const ContentItems= ({data,setData}) => {
                 <Col>
                     <div className="header">
                         <h3>
-                            <span>Items</span>
+                            <span>Items Sold</span>
                             <button className="btn">Add New</button>
                         </h3>
                     </div>

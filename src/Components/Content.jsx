@@ -47,6 +47,23 @@ const Content = ({currentView}) => {
         }
     ]);
 
+    let [ledgerContent,setLedgerContent] = useState([
+        {
+            item_no : '1',
+            payment_date : '27-09-2022',
+            payment_mode : 'Cash',
+            payment_type : 'advance',
+            payment_amount : '20000'
+        },
+        {
+            item_no : '1',
+            payment_date : '27-10-2022',
+            payment_mode : 'Cash',
+            payment_type : 'installment',
+            payment_amount : '2500'
+        }
+    ]);
+
 
     let elementToRender;
 
@@ -63,7 +80,7 @@ const Content = ({currentView}) => {
         elementToRender = <ContentVendors data={vendorContent} setData={setVendorContent}/>
     }
     else if(currentView === 'ledger'){
-        elementToRender = <ContentLedger />
+        elementToRender = <ContentLedger data={ledgerContent} setData={setLedgerContent}/>
     }
 
 

@@ -1,8 +1,12 @@
 
 import {Container, Row , Col} from 'react-bootstrap'
-import Table from 'react-bootstrap/Table';
+import PopulateTable from '../Components/PopulateTable';
 
-const ContentLedger = () => {
+const ContentLedger = ({data,setData}) => {
+
+    let tableFields = ['Item No','Payment Date','Payment Mode','Payment Type','Payment Amount'];
+
+    
     return(
         <Container className="content-ledger" fluid>
             
@@ -14,6 +18,12 @@ const ContentLedger = () => {
                             <button className="btn">Add New</button>
                         </h3>
                     </div>
+                </Col>
+            </Row>
+
+            <Row>
+                <Col>
+                    <PopulateTable fields={tableFields} data={data}/>
                 </Col>
             </Row>
 
