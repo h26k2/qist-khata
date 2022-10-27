@@ -1,8 +1,12 @@
 
 import {Container, Row , Col} from 'react-bootstrap'
 
+import PopulateTable from '../Components/PopulateTable';
 
-const ContentVendors = () => {
+const ContentVendors = ({data,setData}) => {
+
+    let tableFields = ['ID','Name','Address'];
+
     return(
         <Container className="content-vendors">
             
@@ -16,6 +20,14 @@ const ContentVendors = () => {
                     </div>
                 </Col>
             </Row>
+
+            <Row>
+                <Col>
+                    <PopulateTable fields={tableFields} data={data}/>
+                </Col>
+            </Row>
+
+
 
         </Container>
     )

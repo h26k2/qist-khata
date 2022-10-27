@@ -1,9 +1,16 @@
 
 import {Container, Row , Col} from 'react-bootstrap'
-import Table from 'react-bootstrap/Table';
+import PopulateTable from '../Components/PopulateTable';
 
 
-const ContentItems= () => {
+
+const ContentItems= ({data,setData}) => {
+
+
+    let tableFields = ['ID','Item Name','Customer Name','Payment Schedule','Installment Amount','Actual Price','Payable Price',
+    'Vendor Name','Duration'];
+
+
     return(
         <Container className="content-items" fluid>
             
@@ -19,8 +26,11 @@ const ContentItems= () => {
             </Row>
 
             <Row>
-
+                <Col>
+                    <PopulateTable fields={tableFields} data={data}/>
+                </Col>
             </Row>
+
 
         </Container>
     )

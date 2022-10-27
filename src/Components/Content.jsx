@@ -27,6 +27,27 @@ const Content = ({currentView}) => {
     ]);
 
 
+    let [vendorContent,setVendorContent] = useState([
+        {
+            id : '1' , name : 'hasnain karim', address : '70/2 garden east'
+        }
+    ]);
+
+    let [itemContent,setItemContent] = useState([
+        {
+            id : '1', 
+            item_name : 'Superpower 70cc bike', 
+            customer_name : 'hasnain karim', 
+            payment_schedule : 'monthly',
+            installment_amount : '2500',
+            actual_price : '80000',
+            payable_price : '100000',
+            vendor_name : 'Maqbool Shah',
+            duration : '40 Months'
+        }
+    ]);
+
+
     let elementToRender;
 
     if(currentView === 'dashboard'){
@@ -36,10 +57,10 @@ const Content = ({currentView}) => {
         elementToRender = <ContentCustomers data={customerContent} setData={setCustomerContent}/>
     }
     else if(currentView === 'items'){
-        elementToRender = <ContentItems />
+        elementToRender = <ContentItems data={itemContent} setData={setItemContent}/>
     }
     else if(currentView === 'vendors'){
-        elementToRender = <ContentVendors />
+        elementToRender = <ContentVendors data={vendorContent} setData={setVendorContent}/>
     }
     else if(currentView === 'ledger'){
         elementToRender = <ContentLedger />

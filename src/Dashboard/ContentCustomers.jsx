@@ -1,7 +1,6 @@
 
 import {Container, Row , Col} from 'react-bootstrap'
 
-import Table from 'react-bootstrap/Table';
 import PopulateTable from '../Components/PopulateTable';
 
 const ContentCustomers = ({data,setData}) => {
