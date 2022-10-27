@@ -1,9 +1,9 @@
 
 import {Container, Row , Col} from 'react-bootstrap'
-
+import Modal from 'react-bootstrap/Modal';
 import PopulateTable from '../Components/PopulateTable';
 
-const ContentCustomers = ({data,setData}) => {
+const ContentCustomers = ({data,setData,modal}) => {
 
     let tableFields = ['Name','CNIC Number','CNIC Picture','Phone','Address','Picture','Guarantor Name',
     'Guarantor Phone','Guarantor Address'];
@@ -16,7 +16,7 @@ const ContentCustomers = ({data,setData}) => {
                     <div className="header">
                         <h3>
                             <span>Customers</span>
-                            <button className="btn">Add New</button>
+                            <button className="btn" onClick={modal.handleShow}>Add New</button>
                         </h3>
                     </div>
                 </Col>

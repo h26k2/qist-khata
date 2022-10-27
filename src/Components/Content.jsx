@@ -6,8 +6,17 @@ import ContentLedger from '../Dashboard/ContentLedger';
 import ContentVendors from '../Dashboard/ContentVendors';
 
 import {useState} from 'react'
+import { Modal } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button';
 
 const Content = ({currentView}) => {
+
+    // modal which 
+
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
 
     let [customerContent,setCustomerContent] = useState([
@@ -65,26 +74,45 @@ const Content = ({currentView}) => {
     ]);
 
 
-    let elementToRender;
+    let elementToRender , modalTitle , modalContent;
 
     if(currentView === 'dashboard'){
         elementToRender = <ContentDashboard />
     }
     else if(currentView === 'customers'){
-        elementToRender = <ContentCustomers data={customerContent} setData={setCustomerContent}/>
+        elementToRender = <ContentCustomers data={customerContent} setData={setCustomerContent} modal={{handleShow}}/>
+        modalTitle = 'Add New Customer';
     }
     else if(currentView === 'items'){
         elementToRender = <ContentItems data={itemContent} setData={setItemContent}/>
+        modalTitle = 'Add New Item';
     }
     else if(currentView === 'vendors'){
         elementToRender = <ContentVendors data={vendorContent} setData={setVendorContent}/>
+        modalTitle = 'Add New Vendor';
     }
     else if(currentView === 'ledger'){
         elementToRender = <ContentLedger data={ledgerContent} setData={setLedgerContent}/>
+        modalTitle = 'Add New Ledger';
     }
 
 
-    return elementToRender
+    return (
+        <>
+            {elementToRender}
+            <Modal show={show} onHide={handleClose} size="lg">
+                <Modal.Header closeButton>
+                    <Modal.Title>
+                        {modalTitle}
+                    </Modal.Title>
+                </Modal.Header>
+                <Modal.Footer>
+                    <button onClick={handleClose} className='btn'>Close</button>
+                    <button onClick={handleClose} className='btn'>Save Changes</button>
+                </Modal.Footer>
+            </Modal>
+        </>
+    )
         
 }
 
