@@ -216,3 +216,36 @@ statistics box
   margin:10px 2.5px;
   padding:0.5em 1.5em;
 }
+
+.form-container .qk-input-field{
+  display:inline-block;
+  margin:0.5em 0.25em;
+  position: relative;
+}
+
+.form-container .qk-input-field.w-100{
+  display:block;
+}
+
+.form-container textarea{
+  width:87%;
+}
+
+.form-container .qk-input-field label{
+  display:block;
+  text-transform: capitalize;
+  padding:0.25em 0.2em;
+  font-weight: 500;
+}
+
+.form-container .qk-input-field input,
+.form-container .qk-input-field textarea{
+  border:2px solid var(--border-color)!important;
+  padding:0.5em 1em;
+  border-radius:5px;
+}
+
+.form-container .qk-input-field input:focus,
+.form-container .qk-input-field textarea:focus{
+  border:2px solid var(--blue)!important;
+}

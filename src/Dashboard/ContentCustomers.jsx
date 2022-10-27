@@ -5,8 +5,8 @@ import PopulateTable from '../Components/PopulateTable';
 
 const ContentCustomers = ({data,setData,modal}) => {
 
-    let tableFields = ['Name','CNIC Number','CNIC Picture','Phone','Address','Picture','Guarantor Name',
-    'Guarantor Phone','Guarantor Address'];
+    let tableFields = ['Name','CNIC Number','Phone','Address','Guarantor Name',
+    'Guarantor Phone','Guarantor Address','CNIC Picture','Picture'];
 
     return(
         <Container className="content-ledger" fluid>
