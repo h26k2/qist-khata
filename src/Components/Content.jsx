@@ -24,19 +24,6 @@ const Content = ({currentView}) => {
             guarantor_phone : '03152323228',
             guarantor_adddress : 'b-21 love lane, zohra terrace, garden west'
         },
-        {
-            name : 'ismail shah', cnic_number : '4240160512159',
-            cnic : {
-                front : 'sldkfj',
-                back : 'skdlfj'
-            },
-            phone : '03212789262',
-            address : 'E-106, Bilal Arcade, Phase 2',
-            picture : 'hello world',
-            guarantor_name : 'abdul kabeer',
-            guarantor_phone : '03152323228',
-            guarantor_adddress : 'b-21 love lane, zohra terrace, garden west'
-        }
     ]);
 
 

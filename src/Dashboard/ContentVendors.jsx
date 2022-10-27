@@ -1,6 +1,6 @@
 
 import {Container, Row , Col} from 'react-bootstrap'
-import Table from 'react-bootstrap/Table';
+
 
 const ContentVendors = () => {
     return(

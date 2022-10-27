@@ -73,7 +73,7 @@ const PopulateTable = ({data,fields}) => {
 
         {(dataToRender.length < 1) ? <span className='no-records'> No Records were found </span> : null}
 
-        <Pagination />
+        {/*<Pagination data={dataToRender} />*/}
         </>
     )
 }

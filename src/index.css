@@ -186,7 +186,7 @@ data table styles
   padding:5px 8px
 }
 
-.qk-pagination span{
+.qk-pagination .pages-count{
   margin-left:10px;
   margin-right:10px;
   color:var(--black-light)
