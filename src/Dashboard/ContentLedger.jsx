@@ -5,7 +5,6 @@ import PopulateTable from '../Components/PopulateTable';
 const ContentLedger = ({data,setData}) => {
 
     let tableFields = ['Item No','Payment Date','Payment Mode','Payment Type','Payment Amount'];
-
     
     return(
         <Container className="content-ledger" fluid>

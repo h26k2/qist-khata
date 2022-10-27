@@ -191,3 +191,20 @@ data table styles
   margin-right:10px;
   color:var(--black-light)
 }
+
+/***
+statistics box
+**/
+
+.statistics-box{
+  text-align: center;
+  padding:1em 0.5em;
+  margin:1em 0;
+  background:#fff;
+  border:2px solid var(--border-color);
+}
+
+.statistics-box p{
+  font-size:14px;
+  font-style: italic;
+}
