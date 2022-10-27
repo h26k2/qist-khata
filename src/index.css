@@ -1,3 +1,21 @@
+*{
+  box-sizing: border-box;
+}
+
+:root{
+  --black : #1b2327;
+  --black-light : #2a3338;
+  --gray : #b4bcb9;
+  --white : #f0f0f1;
+  --blue : #0073b1;
+  --green : #00a639;
+  --yellow : #e8a408;
+  --light-blue : #56b0e6;
+  --dark-blue : #00517d;
+  --red : #ed1f24;
+  --border-color : #c3c4c7;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +23,171 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background : var(--white);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+a{
+  text-decoration: none;
+}
+
+/**********
+  DASHBOARD LAYOUT
+  ********************/
+
+.dashboard{
+  position: relative;
+}
+
+.dashboard .sidebar{
+  width:200px;
+  height: 100%;
+  position: fixed;
+  background : var(--black);
+}
+
+.dashboard .content-area{
+  padding:2em;
+  padding-left:calc(200px + 2em);
+}
+
+/***
+ Navigation links
+
+ *****/
+
+
+.navigation-links{
+  padding-left:0;
+}
+
+.navigation-links li a{
+  position: relative;
+  display:block;
+  padding:0.6em 1.5em;
+  transition:color 150ms ease 0s;
+  color:var(--gray);
+  font-weight: 400;
+  font-size:14px;
+  overflow:hidden;
+  text-transform: capitalize;
+}
+
+.navigation-links a:hover{
+  color:var(--light-blue);
+}
+
+.navigation-links a.active{
+  color:#fff;
+  background:var(--blue);
+}
+
+.navigation-links a.active::after{
+  position: absolute;
+  content: "";
+  width:15px;
+  height: 15px;
+  background:var(--white);
+  right:-10px;
+  top:50%;
+  transform:translateY(-50%) rotate(45deg);
+}
+
+.header{
+  margin:2.5em 0;
+}
+
+.header .btn{
+  margin: 0 1em;
+}
+
+.btn{
+  border:1px solid var(--blue);
+  margin:0.2em 1em;
+  font-size:14px;
+  padding:0.25em 0.8em;
+  border-radius:3px;
+  color:var(--blue);
+  font-weight: 500;
+}
+
+.btn:hover,
+.btn:active,
+.btn:focus{
+  border:1px solid var(--dark-blue)!important;
+  color:var(--dark-blue)!important;
+  background:rgba(0, 115, 177,0.05)!important
+}
+
+/***************
+  customers
+********************/
+
+
+/**********************
+data table styles
+***********************/
+
+.table-pic-wrapper{
+  display: inline-block;
+  width:50px;
+  height: 50px;
+  background:teal;
+  position: relative;
+  background-size:cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.table-pic-wrapper.nic{
+  width:50px;
+  height:25px;
+  margin-top:0.1px;
+  
+}
+
+.qk-table{
+  border:1px solid var(--border-color);
+  font-size:14px;
+  text-align: center;
+}
+
+.qk-table thead{
+  background:#fff;
+  vertical-align: middle;
+}
+
+.qk-table thead th{
+  font-weight: 500;
+}
+
+.qk-table td{
+  vertical-align: middle;
+  text-align: center;
+}
+
+.qk-table tbody tr:nth-child(odd){
+  background:#f6f7f7;
+}
+
+.qk-table tbody tr:nth-child(even){
+  background:#fff;
+}
+
+.no-records{
+  font-size:12px;
+  font-style: italic;
+}
+
+
+/* pagination */
+
+.qk-pagination .btn{
+  margin:2px;
+  padding:5px 8px
+}
+
+.qk-pagination span{
+  margin-left:10px;
+  margin-right:10px;
+  color:var(--black-light)
 }
